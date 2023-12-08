@@ -1,0 +1,2 @@
+//mongodb start
+D:\Learning\mongo\mongodb\bin\mongod.exe --dbpath="D:\Learning\mongo\mongodb-data"

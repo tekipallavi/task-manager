@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "a38114f0-044f-465a-bf0b-a5d05d12767c",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Update User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"isSuperAdmin\": true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/updateUser/5f5789329da1691f20c893aa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"updateUser",
+								"5f5789329da1691f20c893aa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"isSuperAdmin\": false}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/updateUser/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"updateUser",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/getUsers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/getUsers/5f5789329da1691f20c893aa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"getUsers",
+								"5f5789329da1691f20c893aa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/getUsers/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"getUsers",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/deleteUser/5f64b0f30ad37f0244eb7dfd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"deleteUser",
+								"5f64b0f30ad37f0244eb7dfd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete profile",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/deleteUser/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"deleteUser",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Task API",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task\": \"Learn Node\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"filter\": {\r\n    \"completed\": \"false\",\r\n    \"pageSize\": 1,\r\n    \"page\": 2\r\n}, \"sort\": {\r\n    \"task\": \"asc\"\r\n}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks/getTasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"getTasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"task\": \"Build Chat App\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks/getTasks/5f636f18bddf3618445ea704",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"getTasks",
+								"5f636f18bddf3618445ea704"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"completed\": true}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks/updateTask/5f64b49e4eba3d041c19320b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"updateTask",
+								"5f64b49e4eba3d041c19320b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/deleteTask/5f47de6d241e3f0d1841d156",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"deleteTask",
+								"5f47de6d241e3f0d1841d156"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0141f990-16d3-4b6b-b4cf-30bb6487b0ce",
+								"exec": [
+									"if(pm.response.code === 200) {\r",
+									"    pm.environment.set('authToken', pm.response.json().token);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tekipallavi@gmail.com\",\r\n    \"password\": \"pwd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e435ad2d-8378-43e5-a063-1ca6819c5a76",
+								"exec": [
+									"if(pm.response.code === 201) {\r",
+									"    pm.environment.set('authToken', pm.response.json().token);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Teki Pallavi\",\r\n    \"email\": \"tekipallavi@gmail.com\",\r\n    \"password\": \"pwd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/addUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fa2c0227-4e2e-40f3-b20a-0c693585db3a",
+								"exec": [
+									"if(pm.response.code === 200) {\r",
+									"    pm.environment.set('authToken', '');\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}\\logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "399fa6dd-cbbe-404b-8f02-4fa012faef40",
+								"exec": [
+									"if(pm.response.status === 200) {\r",
+									"    pm.environment.set('authToken', ' ');\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}\\logoutAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logoutAll"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "44cb35ad-cef3-4300-bc97-846a9bfb6a60",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ca3336be-8822-4a84-90ac-a9dfffe26616",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
